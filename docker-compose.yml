@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  sql-seguro:
+    build: .
+    container_name: sql-seguro
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
+
+  mongo-seguro:
+    image: mongodb/mongodb-community-server:latest
+    container_name: mongo-seguro
+    ports:
+      - "27017:27017"
